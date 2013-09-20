@@ -1,0 +1,25 @@
+name: DoragonSecrets
+main: me.carl230690.secretdoors.SecretDoors
+version: 1.1
+author: carl230690
+description: Secret if we told u it would'nt be a secret :D
+
+permissions:
+  secretdoors.*:
+    description: Gives access to all Secret Doors permissions
+    children:
+      secretdoors.use: true
+      secretdoors.reload: true
+    secretdoors.use:
+      description: Allows players to open and close Secret Doors
+      default: op
+    secretdoors.reload:
+      description: Allows players to use /secretdoors reload and /sd reload
+      default: op
+commands:
+  secretdoors:
+    description: Reloads the config file
+    usage: Usage -> /secretdoors reload
+    aliases: sd
+    permission: secretdoor.reload
+    permission-message: You don't have permissions to do that!
