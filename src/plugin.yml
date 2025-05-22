@@ -1,25 +1,32 @@
-name: DoragonSecrets
-main: me.carl230690.secretdoors.SecretDoors
-version: 1.1
-author: carl230690
-description: Secret if we told u it would'nt be a secret :D
-
-permissions:
-  secretdoors.*:
-    description: Gives access to all Secret Doors permissions
-    children:
-      secretdoors.use: true
-      secretdoors.reload: true
-    secretdoors.use:
-      description: Allows players to open and close Secret Doors
-      default: op
-    secretdoors.reload:
-      description: Allows players to use /secretdoors reload and /sd reload
-      default: op
+name: DCSecretDoors
+version: '${project.version}'
+main: me.doragoncraft.secretdoors.SecretDoors
+author: Doragoncraft
+website: https://doragoncraftnetwork.com/
+api-version: 1.15
+load: STARTUP
 commands:
   secretdoors:
     description: Reloads the config file
-    usage: Usage -> /secretdoors reload
-    aliases: sd
-    permission: secretdoor.reload
+    usage: /<command> reload
     permission-message: You don't have permissions to do that!
+    aliases:
+      - sd
+permissions:
+  secretdoors.*:
+    description: Gives access to all Secret Doors permissions
+    default: op
+    children:
+      secretdoors.use: true
+      secretdoors.reload: true
+      secretdoors.create: true
+      ws.tp.world: true
+  secretdoors.create:
+    description: Allows creation of a SecretDoor.
+    default: op
+  secretdoors.reload:
+    description: Allows players to use /secretdoors reload and /sd reload
+    default: op
+  secretdoors.use:
+    description: Allows players to open and close Secret Doors
+    default: op
